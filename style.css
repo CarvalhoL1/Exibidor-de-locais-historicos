@@ -35,3 +35,17 @@ header a {
     width: 4rem;
     height: 4rem;
 }
+footer{
+    float: right;
+    margin-right: 30rem;
+    margin-top: -15rem;
+    bottom: 30rem;
+    width: 10rem;
+    height: 5rem;
+    display: flex;
+    gap: 15px;
+}
+footer img {
+
+    border-radius: 15px;
+}
