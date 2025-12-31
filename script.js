@@ -29,16 +29,21 @@ function mudar_indice(sentido){
 function mudar_local(){
        let titulo = document.querySelector(".local");
        let descricao = document.querySelector(".descricao");
-       let card = document.querySelectorAll(".card");
+       let cards = document.querySelectorAll(".card");
        titulo.textContent = locais[i].titulo;
        descricao.textContent = locais[i].descricao;
-       card.forEach((card, i) => {
-            card.src = locais[i].img;
+       const ordem = [...locais.slice(i), ...locais.slice(0, i)];
+       cards.forEach((card, i) => {
+            card.src = ordem[i].img;
        })
-       let card_atual = card[i]
+
+       let card_atual = cards[0]
        card_atual.classList.add("expandir");
        setTimeout(() => {
         document.body.style.backgroundImage = `url(${locais[i].img})`;
         card_atual.classList.remove("expandir");
        }, 1000)
+}
+function atualizar_cards(){
+
 }
