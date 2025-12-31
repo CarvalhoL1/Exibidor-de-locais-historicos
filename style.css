@@ -8,6 +8,7 @@ body{
     background-size: cover;
     background-position: center;
     z-index: -1;
+    transition: background-imagem 1s ease;
 }
 header{
     background-color: rgb(24, 27, 30);
@@ -79,9 +80,18 @@ footer{
     transition: transform 1s ease-in, opacity 1s ease-in;
     transform-origin: center center;
 }
-.expandir{
-    transform: scale(20);
-    opacity: 0;
-    z-index: 0;
+
+.card.expandir{
+    position: relative;
+    
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    transition: all 1s ease;
+    transform: scale(1);
     transform-origin: center center;
+}
+.card.expandir.ativo{
+    transform: scale(5);
 }

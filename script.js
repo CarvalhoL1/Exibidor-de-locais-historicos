@@ -44,7 +44,10 @@ function mudar_local(){
        let card_atual = cards[0]
        card_atual.classList.add("expandir");
        setTimeout(() => {
+        card_atual.classList.add("ativo");
+       }, 50)
+       setTimeout(() => {
         document.body.style.backgroundImage = `url(${locais[i].img})`;
-        card_atual.classList.remove("expandir");
+        card_atual.classList.remove("expandir", "ativo");
        }, 1000)
 }
