@@ -54,10 +54,11 @@ footer{
     height: 9rem;
     border-radius: 15px;
     object-fit: cover;
-    
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
 }
 .expandir{
     transition: transform 1s ease-in-out, opacity 1s ease-in-out;
     transform: scale(20);
+    object-fit: cover;
     z-index: -1;
 }
