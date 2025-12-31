@@ -33,6 +33,10 @@ function mudar_local(){
        titulo.textContent = locais[i].titulo;
        descricao.textContent = locais[i].descricao;
        const ordem = [...locais.slice(i), ...locais.slice(0, i)];
+       const container = document.querySelector(".container");
+       container.classList.remove('show');
+       void container.offsetWidth;
+       container.classList.add("show");
        cards.forEach((card, i) => {
             card.src = ordem[i].img;
        })
@@ -43,7 +47,4 @@ function mudar_local(){
         document.body.style.backgroundImage = `url(${locais[i].img})`;
         card_atual.classList.remove("expandir");
        }, 1000)
-}
-function atualizar_cards(){
-
 }

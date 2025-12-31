@@ -30,7 +30,28 @@ header a {
     margin-left: 8rem;
     width: 24rem;
     height: 18rem;
+    transform: translateY(50px);
+    opacity: 0;
+    filter: blur(25px);
+    transition: opacity 1.5s ease, trasform 1.5s ease;
 }
+.container.show {
+  animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    filter: blur(25px);
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    filter: blur();
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .setas{
     margin-top: 6rem;
     margin-left: 8rem;
@@ -62,4 +83,5 @@ footer{
     transform: scale(20);
     opacity: 0;
     z-index: 0;
+    transform-origin: center center;
 }
