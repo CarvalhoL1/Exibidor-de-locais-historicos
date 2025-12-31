@@ -42,12 +42,24 @@ function mudar_local(){
        })
 
        let card_atual = cards[0]
-       card_atual.classList.add("expandir");
-       setTimeout(() => {
-        card_atual.classList.add("ativo");
-       }, 50)
+       expandir_card(card_atual);
        setTimeout(() => {
         document.body.style.backgroundImage = `url(${locais[i].img})`;
         card_atual.classList.remove("expandir", "ativo");
        }, 1000)
+}
+function expandir_card (card){
+    const rect = card.getBoundingClientRect();
+    const centroX = window.innerWidth/2;
+    const centroY = window.innerHeight/2;
+    const offsetX = centroX - (rect.left + rect.width / 2);
+    const offsetY = centroY - (rect.top + rect.height / 2);
+    card.style.transformOrigin = "center center";
+    card.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(5)`;
+    setTimeout(() => {
+        document.body.style.backgroundImage = `url(${card.src})`;
+        card.style.transform = "";
+    }, 1000)
+
+
 }

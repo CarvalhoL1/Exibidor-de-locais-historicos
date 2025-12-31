@@ -83,7 +83,7 @@ footer{
 
 .card.expandir{
     position: relative;
-    
+    border-radius: 0px;
     width: 100vw;
     height: 100vh;
     object-fit: cover;
