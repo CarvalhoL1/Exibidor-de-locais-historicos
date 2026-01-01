@@ -6,60 +6,38 @@ const locais = [
 ]
 let frente = document.getElementById('frente')
 let tras = document.getElementById('tras')
-var i = 0;
- mudar_local();
-    frente.onclick = () => mudar_indice(frente);
-    tras.onclick = () => mudar_indice(tras);
 
-function mudar_indice(sentido){
-    if(sentido == frente && i < locais.length - 1){
-        i++;
-    }
-    else if(sentido == frente && i == locais.length - 1){
-        i = 0;
-    }
-    else if(sentido == tras && i > 0){
-        i--;
-    }
-    else if(sentido == tras && i == 0){
-        i = locais.length - 1;
-    }
-    mudar_local();
-}
-function mudar_local(){
+frente.onclick = expandir_card;
+
+tras.onclick = () => {
+    const container = document.querySelector(".coleção-de-imagens");
+    container.insertBefore(
+        container.lastElementChild,
+        container.firstElementChild
+    );
+    expandir_card();
+};
+function mudar_local(card){
+
+        const i = card.dataset.index
        let titulo = document.querySelector(".local");
        let descricao = document.querySelector(".descricao");
-       let cards = document.querySelectorAll(".card");
+        
        titulo.textContent = locais[i].titulo;
        descricao.textContent = locais[i].descricao;
-       const ordem = [...locais.slice(i), ...locais.slice(0, i)];
-       const container = document.querySelector(".container");
-       container.classList.remove('show');
-       void container.offsetWidth;
-       container.classList.add("show");
-       cards.forEach((card, i) => {
-            card.src = ordem[i].img;
-       })
-
-       let card_atual = cards[0]
-       expandir_card(card_atual);
-       setTimeout(() => {
-        document.body.style.backgroundImage = `url(${locais[i].img})`;
-        card_atual.classList.remove("expandir", "ativo");
-       }, 1000)
-}
-function expandir_card (card){
-    const rect = card.getBoundingClientRect();
-    const centroX = window.innerWidth/2;
-    const centroY = window.innerHeight/2;
-    const offsetX = centroX - (rect.left + rect.width / 2);
-    const offsetY = centroY - (rect.top + rect.height / 2);
-    card.style.transformOrigin = "center center";
-    card.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(5)`;
-    setTimeout(() => {
+        setTimeout(() => {
         document.body.style.backgroundImage = `url(${card.src})`;
-        card.style.transform = "";
-    }, 1000)
-
-
+       }, 900)
+}
+function expandir_card (){
+    const container = document.querySelector(".coleção-de-imagens");
+    const card = container.firstElementChild;
+    mudar_local(card)
+    card.classList.add("expandir");
+    setTimeout(() => {
+        card.classList.remove("expandir");
+        container.appendChild(card);
+ 
+       }, 1000)
+      
 }
