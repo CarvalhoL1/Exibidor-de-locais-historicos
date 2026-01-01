@@ -19,10 +19,14 @@ tras.onclick = () => {
 };
 function mudar_local(card){
 
-        const i = card.dataset.index
+       const cards = [...document.querySelectorAll(".card")];
+       const i = Number(card.dataset.index);
+      const conteudo = document.querySelector(".container");
        let titulo = document.querySelector(".local");
        let descricao = document.querySelector(".descricao");
-        
+        conteudo.classList.remove("show");
+    void conteudo.offsetWidth;
+   conteudo.classList.add("show");
        titulo.textContent = locais[i].titulo;
        descricao.textContent = locais[i].descricao;
         setTimeout(() => {

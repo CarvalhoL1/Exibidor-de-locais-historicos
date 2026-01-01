@@ -7,7 +7,6 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    z-index: -1;
     transition: background-image 1s ease;
 }
 header{
@@ -35,7 +34,7 @@ header a {
     transform: translateY(50px);
     opacity: 0;
     filter: blur(25px);
-    transition: opacity 1.5s ease, trasform 1.5s ease;
+    transition: opacity 1.5s ease, transform 1.5s ease;
 }
 .container.show {
   animation: fadeUp 1s ease forwards;
@@ -89,9 +88,9 @@ footer{
     width: 100vw;
     height: 100vh;
     object-fit: cover;
-    z-index: 2;
+    z-index: 1;
     transition: all 1s ease;
     transform: translate(-50%, -50%) scale(1);
     transform-origin: center center;
-    z-index: -10;
+
 }
