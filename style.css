@@ -7,7 +7,7 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    transition: background-image 1s ease;
+
 }
 header{
     background-color: rgb(24, 27, 30);
