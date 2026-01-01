@@ -54,13 +54,21 @@ header a {
 }
 
 .setas{
+    
     margin-top: 6rem;
     margin-left: 8rem;
+    position: relative;
+    z-index: 10;
 }
 .setas button{
-    
+    background-color: whitesmoke;
+    border-radius: 10px;
     width: 4rem;
     height: 4rem;
+}
+.fa-solid fa-caret-left, .fa-solid fa-caret-right{
+    width: 80%;
+    height: 80%;
 }
 footer{
     float: right;
@@ -88,7 +96,7 @@ footer{
     width: 100vw;
     height: 100vh;
     object-fit: cover;
-    z-index: 1;
+    z-index: 0;
     transition: all 1s ease;
     transform: translate(-50%, -50%) scale(1);
     transform-origin: center center;
