@@ -61,14 +61,17 @@ header a {
     z-index: 10;
 }
 .setas button{
-    background-color: whitesmoke;
+    background-color: rgba(255, 255, 255, 0.6);
     border-radius: 10px;
     width: 4rem;
     height: 4rem;
 }
-.fa-solid fa-caret-left, .fa-solid fa-caret-right{
-    width: 80%;
-    height: 80%;
+.setas button:hover{
+    background-color: rgba(255, 255, 255, 0.95);
+}
+#tras i, #frente i{
+    transform: scale(1.6);
+    opacity: 1;
 }
 footer{
     float: right;
