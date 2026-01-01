@@ -11,8 +11,9 @@ frente.onclick = expandir_card;
 
 tras.onclick = () => {
     const container = document.querySelector(".coleção-de-imagens");
+    const penultimo = container.children[container.children.length - 2]
     container.insertBefore(
-        container.lastElementChild,
+        penultimo,
         container.firstElementChild
     );
     expandir_card();
