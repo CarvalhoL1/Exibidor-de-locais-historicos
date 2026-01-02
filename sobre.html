@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Tektur:wght@400..900&family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+}
+body{
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url(fundo.jpg);
+}
 header{
     position: relative;
     z-index: 10;
@@ -12,7 +25,7 @@ header{
     height: 5rem;
     display: flex;
     align-items: center;
-    background-color: black;
+
 }
 a{
     margin-left: 2rem;
@@ -26,6 +39,21 @@ a{
 a:hover{
     background-color: rgba(96, 95, 95, 0.6);
 }
+#container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: calc(100vh - 5rem);
+}
+#sobre{
+    padding: 2px;
+    border-radius: 12px;
+    background-color: rgba(96, 95, 95, 0.6);
+    width: 300px;
+    height: 200px;
+    color: aliceblue;
+}
     </style>
 </head>
 <body>
@@ -35,5 +63,8 @@ a:hover{
         <a href="sobre.html">Sobre o projeto</a>
         </nav>
     </header>
+    <div id="container">
+    <div id="sobre">Projeto feito com o intuito de praticar habilidades no HTML, CSS e JavaScript</div>
+    </div>
 </body>
 </html>
