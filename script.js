@@ -14,7 +14,8 @@ function iniciar(){
     titulo.textContent = locais[i].titulo;
     descricao.textContent = locais[i].descricao;
     document.body.style.backgroundImage = `url(${locais[i].img})`;
-   conteudo.classList.add("show");
+   titulo.classList.add("show");
+   descricao.classList.add("show");
 }
 iniciar();
 let frente = document.getElementById('frente')
@@ -39,14 +40,18 @@ function mudar_local(card){
     let titulo = document.querySelector(".local");
     let descricao = document.querySelector(".descricao");
 
-    conteudo.classList.remove("show");
-    void conteudo.offsetWidth;
-    conteudo.classList.add("show");
     titulo.textContent = locais[i].titulo;
     descricao.textContent = locais[i].descricao;
-    setTimeout(() => {
-        document.body.style.backgroundImage = `url(${card.src})`;
-       }, 900)
+    
+    descricao.classList.remove("show");
+    titulo.classList.remove("show");
+
+    void titulo.offsetWidth;
+    void descricao.offsetWidth;
+
+    descricao.classList.add("show");
+    titulo.classList.add("show");
+   
 }
 function expandir_card (){
     const container = document.querySelector(".coleção-de-imagens");
@@ -54,9 +59,10 @@ function expandir_card (){
     mudar_local(card)
     card.classList.add("expandir");
     setTimeout(() => {
+        document.body.style.backgroundImage = `url(${card.src})`;
         card.classList.remove("expandir");
         container.appendChild(card);
- 
+
        }, 1000)
       
 }

@@ -38,20 +38,31 @@ a:hover{
     width: 50rem;
     height: 16rem;
     transform: translateY(50px);
-    opacity: 0;
-    filter: blur(25px);
     color: aliceblue;
-    transition: opacity 1.5s ease, transform 1.5s ease;
+    
 }
-.container.show {
-  animation: fadeUp 1s ease forwards;
-}
+
 .local{
+  
     font-family: "DM Serif Text", serif;
-  font-weight: 800;
+    font-weight: 800;
+    opacity: 0;
+    transform: translateY(50px);
+    filter: blur(25px);
+}
+.local.show{
+    animation: fadeUp 1s ease both;
 }
 .descricao{
-     font-family: "Roboto", sans-serif;
+
+    opacity: 0;
+    transform: translateY(50px);
+    filter: blur(25px);
+    font-family: "Roboto", sans-serif;
+}
+.descricao.show{
+    animation: fadeUp 1s ease both;
+    animation-delay: 0.3s;
 }
 @keyframes fadeUp {
   from {
@@ -60,7 +71,7 @@ a:hover{
     transform: translateY(50px);
   }
   to {
-    filter: blur();
+    filter: blur(0);
     opacity: 1;
     transform: translateY(0);
   }
@@ -98,6 +109,8 @@ footer{
     gap: 15px;
 }
 .card {
+    position: relative;
+    z-index: 10;
     width: 6rem;
     height: 9rem;
     border-radius: 15px;
