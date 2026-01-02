@@ -4,6 +4,19 @@ const locais = [
     {titulo: "Stonehenge", img: "Stonehenge.jpg", descricao: "Stonehenge é um monumento megalítico localizado no sul da Inglaterra, construído entre aproximadamente 3000 e 2000 a.C.. Ele é formado por grandes blocos de pedra dispostos em círculos concêntricos. Embora sua função exata ainda seja debatida, acredita-se que Stonehenge tenha sido usado para rituais religiosos, cerimônias funerárias e observações astronômicas, especialmente relacionadas aos solstícios. O transporte e a organização das pedras demonstram um notável conhecimento técnico das sociedades pré-históricas."},
     {titulo: "Machu Picchu", img: "machu-picchu.jpg", descricao: "Machu Picchu é uma antiga cidade inca situada no topo das montanhas dos Andes peruanos, a cerca de 2.400 metros de altitude. Construída no século XV, durante o reinado do imperador Pachacuti, a cidade provavelmente teve funções religiosas, políticas e astronômicas. O local é famoso por sua arquitetura em pedra perfeitamente encaixada, seus terraços agrícolas e por sua integração harmoniosa com a paisagem natural. Redescoberta em 1911, Machu Picchu é hoje um dos sítios arqueológicos mais visitados do mundo."}
 ]
+function iniciar(){
+    let conteudo = document.querySelector(".container");
+    const container = document.querySelector(".coleção-de-imagens");
+    let card = container.lastElementChild;
+    let i = Number(card.dataset.index);
+    let titulo = document.querySelector(".local");
+    let descricao = document.querySelector(".descricao");
+    titulo.textContent = locais[i].titulo;
+    descricao.textContent = locais[i].descricao;
+    document.body.style.backgroundImage = `url(${locais[i].img})`;
+   conteudo.classList.add("show");
+}
+iniciar();
 let frente = document.getElementById('frente')
 let tras = document.getElementById('tras')
 
@@ -20,17 +33,18 @@ tras.onclick = () => {
 };
 function mudar_local(card){
 
-       const cards = [...document.querySelectorAll(".card")];
-       const i = Number(card.dataset.index);
-      const conteudo = document.querySelector(".container");
-       let titulo = document.querySelector(".local");
-       let descricao = document.querySelector(".descricao");
-        conteudo.classList.remove("show");
+    const cards = [...document.querySelectorAll(".card")];
+    const i = Number(card.dataset.index);
+    const conteudo = document.querySelector(".container");
+    let titulo = document.querySelector(".local");
+    let descricao = document.querySelector(".descricao");
+
+    conteudo.classList.remove("show");
     void conteudo.offsetWidth;
-   conteudo.classList.add("show");
-       titulo.textContent = locais[i].titulo;
-       descricao.textContent = locais[i].descricao;
-        setTimeout(() => {
+    conteudo.classList.add("show");
+    titulo.textContent = locais[i].titulo;
+    descricao.textContent = locais[i].descricao;
+    setTimeout(() => {
         document.body.style.backgroundImage = `url(${card.src})`;
        }, 900)
 }
