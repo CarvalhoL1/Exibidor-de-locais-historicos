@@ -3,7 +3,7 @@ Este projeto apresenta informações sobre locais históricos ao redor do mundo,
 O objetivo é oferecer uma experiência visual e interativa, combinando imagens, descrições e animações em uma página web responsiva.
 
 # Link do site
-- Acesse o projeto em: https://carvalhol1.github.io/Exibidor-de-locais-historicos/sobre.html
+- Acesse o projeto em: https://carvalhol1.github.io/Exibidor-de-locais-historicos/
 ## Funcionalidades
 - Navegação entre páginas (Home e Sobre o Projeto).
 - Cards interativos com expansão de imagens.
