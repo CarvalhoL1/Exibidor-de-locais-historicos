@@ -8,6 +8,7 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+
 }
 header{
     position: relative;
@@ -115,8 +116,8 @@ footer{
 .card {
     position: relative;
     z-index: 10;
-    width: 6rem;
-    height: 9rem;
+    width: clamp(4rem, 15vw, 6rem);
+    height: clamp(6rem, 22vw, 9rem);
     border-radius: 15px;
     object-fit: cover;
     transition: transform 1s ease-in, opacity 1s ease-in;
@@ -135,4 +136,30 @@ footer{
     transform: translate(-50%, -50%) scale(1);
     transform-origin: center center;
 
+}
+@media screen and (max-width: 768px){
+      header{
+        justify-content: center;
+    }
+
+    a{
+        margin-left: 0;
+    }
+
+    footer{
+        justify-content: center;
+        margin-top: 2rem;
+    }
+    .setas{
+        margin-top: 6rem;
+        margin: 4rem auto;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+    .container{
+        margin: 9rem auto 0 auto;
+        width: min(90%, 50rem);
+        text-align: center;
+    }
 }
