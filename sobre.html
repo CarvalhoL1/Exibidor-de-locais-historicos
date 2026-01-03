@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,7 +27,7 @@ header{
     align-items: center;
 
 }
-a{
+.topo{
     margin-left: 2rem;
     padding: 0.6em 1.2em;
     margin-bottom: 1rem;
@@ -36,11 +36,12 @@ a{
     text-decoration: none;
     border-radius: 3px;
 }
-a:hover{
+.topo:hover{
     background-color: rgba(96, 95, 95, 0.6);
 }
 #container{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -70,17 +71,33 @@ a:hover{
     transform: translateY(0);
   }
 }
+.github{
+    padding: 0.6em 1.2em;
+    border-radius: 3px;
+    display: inline-block;
+    margin-top: 1rem;
+    color: rgb(228, 134, 96);
+    background-color: black;
+    text-decoration: none;
+    transition: transform 0.25s ease-in-out;
+}
+.github:hover{
+    transform: scale(1.3);
+
+}
     </style>
 </head>
 <body>
     <header>
         <nav>
-        <a href="index.html">Home</a>
-        <a href="sobre.html">Sobre o projeto</a>
+        <a class="topo" href="index.html">Home</a>
+        <a class="topo" href="sobre.html">Sobre o projeto</a>
         </nav>
     </header>
     <div id="container">
-    <div id="sobre">Projeto feito com o intuito de praticar habilidades no HTML, CSS e JavaScript</div>
+    <div id="sobre">Este projeto foi criado como parte de um estudo de desenvolvimento web, combinando HTML, CSS e JavaScript para explorar técnicas de responsividade e animação, se você gostou, venha conferir mais no meu GitHub! 
+        <br> <a class = "github" href="https://github.com/CarvalhoL1">GitHub</a></div>
+    
     </div>
 </body>
 </html>
